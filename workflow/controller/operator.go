@@ -1288,7 +1288,7 @@ func (woc *wfOperationCtx) addOutputsToScope(prefix string, outputs *wfv1.Output
 	if outputs == nil {
 		return
 	}
-	if prefix != "workflow" && outputs.Result != nil {
+	if outputs.Result != nil {
 		key := fmt.Sprintf("%s.outputs.result", prefix)
 		if scope != nil {
 			scope.addParamToScope(key, *outputs.Result)
